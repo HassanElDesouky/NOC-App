@@ -21,35 +21,31 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-pd-dHj">
                                 <rect key="frame" x="0.0" y="0.0" width="85" height="834"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="bottom" spacing="708" translatesAutoresizingMaskIntoConstraints="NO" id="NyH-Qe-fWm">
-                                        <rect key="frame" x="17" y="8" width="51" height="810"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zmp-aC-7lI">
-                                                <rect key="frame" x="0.0" y="0.0" width="51" height="51"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Zmp-aC-7lI" secondAttribute="height" multiplier="1:1" id="RZX-rA-htb"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2D-zC-7Vt">
-                                                <rect key="frame" x="0.0" y="759" width="51" height="51"/>
-                                                <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                                            </button>
-                                        </subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zmp-aC-7lI">
+                                        <rect key="frame" x="17" y="8" width="51" height="51"/>
+                                        <color key="backgroundColor" red="0.60821783542633057" green="0.44695240259170532" blue="0.84709858894348145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstItem="A2D-zC-7Vt" firstAttribute="centerX" secondItem="NyH-Qe-fWm" secondAttribute="centerX" id="2Sj-kQ-Nyr"/>
-                                            <constraint firstAttribute="trailing" secondItem="Zmp-aC-7lI" secondAttribute="trailing" id="QRe-G3-auT"/>
-                                            <constraint firstItem="Zmp-aC-7lI" firstAttribute="top" secondItem="NyH-Qe-fWm" secondAttribute="top" id="UdX-eb-UCl"/>
-                                            <constraint firstAttribute="bottom" secondItem="A2D-zC-7Vt" secondAttribute="bottom" id="gM6-4r-JTb"/>
-                                            <constraint firstItem="Zmp-aC-7lI" firstAttribute="leading" secondItem="NyH-Qe-fWm" secondAttribute="leading" id="ghg-9Q-gaK"/>
+                                            <constraint firstAttribute="height" constant="51" id="2T3-hX-bck"/>
+                                            <constraint firstAttribute="width" secondItem="Zmp-aC-7lI" secondAttribute="height" multiplier="1:1" id="RZX-rA-htb"/>
+                                            <constraint firstAttribute="width" constant="51" id="X0f-et-QEm"/>
                                         </constraints>
-                                    </stackView>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2D-zC-7Vt">
+                                        <rect key="frame" x="27.5" y="780" width="30" height="30"/>
+                                        <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Mo5-pF-a3P"/>
+                                            <constraint firstAttribute="width" constant="30" id="jFV-nx-152"/>
+                                        </constraints>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.17034709453582764" green="0.20660409331321716" blue="0.26275324821472168" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="NyH-Qe-fWm" secondAttribute="bottom" constant="16" id="H2s-4B-06W"/>
+                                    <constraint firstItem="Zmp-aC-7lI" firstAttribute="top" secondItem="JWO-pd-dHj" secondAttribute="top" constant="8" id="7rv-eh-YsK"/>
+                                    <constraint firstItem="A2D-zC-7Vt" firstAttribute="centerX" secondItem="JWO-pd-dHj" secondAttribute="centerX" id="AIq-yf-vuF"/>
                                     <constraint firstAttribute="width" constant="85" id="HMJ-0G-QI6"/>
-                                    <constraint firstItem="NyH-Qe-fWm" firstAttribute="top" secondItem="JWO-pd-dHj" secondAttribute="top" constant="8" id="NcA-t3-G8z"/>
-                                    <constraint firstItem="NyH-Qe-fWm" firstAttribute="centerX" secondItem="JWO-pd-dHj" secondAttribute="centerX" id="PrJ-Dg-pbU"/>
+                                    <constraint firstAttribute="bottom" secondItem="A2D-zC-7Vt" secondAttribute="bottom" constant="24" id="I0Q-EO-eeR"/>
+                                    <constraint firstItem="Zmp-aC-7lI" firstAttribute="centerX" secondItem="JWO-pd-dHj" secondAttribute="centerX" id="Sdi-zi-QRB"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="afc-Ce-7QT">
