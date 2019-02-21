@@ -13,6 +13,8 @@
 		9ADDF60B221DA7010048E450 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9ADDF60A221DA7010048E450 /* Assets.xcassets */; };
 		9ADDF60E221DA7010048E450 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADDF60C221DA7010048E450 /* LaunchScreen.storyboard */; };
 		9ADDF619221DA7020048E450 /* NOC_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF618221DA7020048E450 /* NOC_AppTests.swift */; };
+		9AE2FDBA221F23100041AA0F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */; };
+		9AE2FDBC221F266B0041AA0F /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBB221F266B0041AA0F /* Server.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		9ADDF614221DA7020048E450 /* NOC-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "NOC-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADDF618221DA7020048E450 /* NOC_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOC_AppTests.swift; sourceTree = "<group>"; };
 		9ADDF61A221DA7020048E450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		9AE2FDBB221F266B0041AA0F /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +82,9 @@
 			isa = PBXGroup;
 			children = (
 				9ADDF603221DA6FF0048E450 /* AppDelegate.swift */,
+				9AE2FDBB221F266B0041AA0F /* Server.swift */,
 				9ADDF605221DA6FF0048E450 /* ViewController.swift */,
+				9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */,
 				9ADDF607221DA6FF0048E450 /* Main.storyboard */,
 				9ADDF60A221DA7010048E450 /* Assets.xcassets */,
 				9ADDF60C221DA7010048E450 /* LaunchScreen.storyboard */,
@@ -197,7 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE2FDBA221F23100041AA0F /* CustomTableViewCell.swift in Sources */,
 				9ADDF606221DA6FF0048E450 /* ViewController.swift in Sources */,
+				9AE2FDBC221F266B0041AA0F /* Server.swift in Sources */,
 				9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
