@@ -59,22 +59,42 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Dc-3S-XJQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="51"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFt-Dv-xdc">
+                                                                <rect key="frame" x="299" y="0.0" width="1" height="51"/>
+                                                                <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="1" id="oAS-po-aGj"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="rKj-NO-TCT">
+                                                                <rect key="frame" x="0.0" y="0.0" width="299" height="51"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                            </searchBar>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="xFt-Dv-xdc" secondAttribute="bottom" id="8RR-6h-7aM"/>
+                                                            <constraint firstAttribute="trailing" secondItem="xFt-Dv-xdc" secondAttribute="trailing" id="Jma-Sc-sIh"/>
                                                             <constraint firstAttribute="width" constant="300" id="MTs-84-lsc"/>
+                                                            <constraint firstAttribute="trailing" secondItem="rKj-NO-TCT" secondAttribute="trailing" constant="1" id="Mkn-as-aNX"/>
+                                                            <constraint firstItem="rKj-NO-TCT" firstAttribute="leading" secondItem="6Dc-3S-XJQ" secondAttribute="leading" id="Xda-ae-76X"/>
+                                                            <constraint firstAttribute="bottom" secondItem="rKj-NO-TCT" secondAttribute="bottom" id="av2-1f-EMh"/>
                                                             <constraint firstAttribute="height" constant="51" id="hwy-qK-Hgi"/>
+                                                            <constraint firstItem="xFt-Dv-xdc" firstAttribute="top" secondItem="6Dc-3S-XJQ" secondAttribute="top" id="wHY-QB-KzO"/>
+                                                            <constraint firstItem="rKj-NO-TCT" firstAttribute="top" secondItem="6Dc-3S-XJQ" secondAttribute="top" id="zwS-rP-Xko"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8w-kI-bey">
                                                         <rect key="frame" x="316" y="0.0" width="437" height="51"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="51" id="VPH-xi-EjM"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGY-c4-2zY">
                                                         <rect key="frame" x="769" y="0.0" width="250" height="51"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="51" id="NwG-q6-80z"/>
                                                             <constraint firstAttribute="width" constant="250" id="Osr-pa-T7R"/>
@@ -137,7 +157,7 @@
                                                                 </view>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fQ8-YY-Swd">
                                                                     <rect key="frame" x="946" y="0.0" width="1" height="62"/>
-                                                                    <color key="backgroundColor" red="0.91175028026905824" green="0.91175028026905824" blue="0.91175028026905824" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="backgroundColor" red="0.90980392156862744" green="0.90980392156862744" blue="0.90980392156862744" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="1" id="JUk-zm-lxi"/>
                                                                     </constraints>
