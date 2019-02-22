@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct JSON: Decodable {
-    let content: [Server]?
+struct JSONFile: Decodable {
+    let content: [Server]
     let pageable: Pageable?
     let totalPages: Int?
     let totalElements: Int?
@@ -21,7 +21,7 @@ struct JSON: Decodable {
     let number: Int?
     let empty: Bool?
     
-    init(servers: [Server]?, pageable: Pageable?,
+    init(servers: [Server], pageable: Pageable?,
         totalPages: Int?, totalElements: Int?,
         first: Bool?, last: Bool?,
         sort: [String: Bool]?, numberOfElements: Int?,

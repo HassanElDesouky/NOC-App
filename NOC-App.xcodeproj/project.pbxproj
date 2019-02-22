@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0BD7D8221F86BB0090AD0D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */; };
 		9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF603221DA6FF0048E450 /* AppDelegate.swift */; };
 		9ADDF606221DA6FF0048E450 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF605221DA6FF0048E450 /* MainViewController.swift */; };
 		9ADDF609221DA6FF0048E450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADDF607221DA6FF0048E450 /* Main.storyboard */; };
@@ -15,7 +16,7 @@
 		9ADDF619221DA7020048E450 /* NOC_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF618221DA7020048E450 /* NOC_AppTests.swift */; };
 		9AE2FDBA221F23100041AA0F /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */; };
 		9AE2FDBC221F266B0041AA0F /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBB221F266B0041AA0F /* Server.swift */; };
-		9AE2FDBE221F46680041AA0F /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBD221F46680041AA0F /* Content.swift */; };
+		9AE2FDBE221F46680041AA0F /* JSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBD221F46680041AA0F /* JSONFile.swift */; };
 		9AE2FDC0221F47440041AA0F /* Pageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBF221F47440041AA0F /* Pageable.swift */; };
 		9AE2FDC2221F49580041AA0F /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC1221F49580041AA0F /* ServerModel.swift */; };
 		9AE2FDC4221F49660041AA0F /* ServerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC3221F49660041AA0F /* ServerStatus.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9ADDF600221DA6FF0048E450 /* NOC-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOC-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADDF603221DA6FF0048E450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ADDF605221DA6FF0048E450 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -46,7 +48,7 @@
 		9ADDF61A221DA7020048E450 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		9AE2FDBB221F266B0041AA0F /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
-		9AE2FDBD221F46680041AA0F /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		9AE2FDBD221F46680041AA0F /* JSONFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFile.swift; sourceTree = "<group>"; };
 		9AE2FDBF221F47440041AA0F /* Pageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pageable.swift; sourceTree = "<group>"; };
 		9AE2FDC1221F49580041AA0F /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
 		9AE2FDC3221F49660041AA0F /* ServerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStatus.swift; sourceTree = "<group>"; };
@@ -72,6 +74,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A0BD7D6221F86A20090AD0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9A4E74B4221F647D00980106 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9AE2FDBB221F266B0041AA0F /* Server.swift */,
+				9AE2FDBD221F46680041AA0F /* JSONFile.swift */,
+				9AE2FDC1221F49580041AA0F /* ServerModel.swift */,
+				9AE2FDC3221F49660041AA0F /* ServerStatus.swift */,
+				9AE2FDC5221F49750041AA0F /* ServerType.swift */,
+				9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */,
+				9AE2FDBF221F47440041AA0F /* Pageable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A4E74B5221F649B00980106 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9ADDF605221DA6FF0048E450 /* MainViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9A4E74B6221F64A200980106 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9ADDF607221DA6FF0048E450 /* Main.storyboard */,
+				9ADDF60C221DA7010048E450 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9A4E74B7221F661200980106 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */,
+			);
+			path = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		9ADDF5F7221DA6FF0048E450 = {
 			isa = PBXGroup;
 			children = (
@@ -94,18 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				9ADDF603221DA6FF0048E450 /* AppDelegate.swift */,
-				9AE2FDBB221F266B0041AA0F /* Server.swift */,
-				9AE2FDBD221F46680041AA0F /* Content.swift */,
-				9AE2FDC1221F49580041AA0F /* ServerModel.swift */,
-				9AE2FDC3221F49660041AA0F /* ServerStatus.swift */,
-				9AE2FDC5221F49750041AA0F /* ServerType.swift */,
-				9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */,
-				9AE2FDBF221F47440041AA0F /* Pageable.swift */,
-				9ADDF605221DA6FF0048E450 /* MainViewController.swift */,
-				9AE2FDB9221F23100041AA0F /* CustomTableViewCell.swift */,
-				9ADDF607221DA6FF0048E450 /* Main.storyboard */,
+				9A0BD7D6221F86A20090AD0D /* Extensions */,
+				9A4E74B4221F647D00980106 /* Model */,
+				9A4E74B6221F64A200980106 /* Views */,
+				9A4E74B5221F649B00980106 /* Controllers */,
+				9A4E74B7221F661200980106 /* Custom Cells */,
 				9ADDF60A221DA7010048E450 /* Assets.xcassets */,
-				9ADDF60C221DA7010048E450 /* LaunchScreen.storyboard */,
 				9ADDF60F221DA7010048E450 /* Info.plist */,
 			);
 			path = "NOC-App";
@@ -227,9 +270,10 @@
 				9AE2FDC8221F49AB0041AA0F /* ServerCommunicationProtocol.swift in Sources */,
 				9AE2FDC2221F49580041AA0F /* ServerModel.swift in Sources */,
 				9AE2FDBA221F23100041AA0F /* CustomTableViewCell.swift in Sources */,
+				9A0BD7D8221F86BB0090AD0D /* UIView+Extension.swift in Sources */,
 				9ADDF606221DA6FF0048E450 /* MainViewController.swift in Sources */,
 				9AE2FDBC221F266B0041AA0F /* Server.swift in Sources */,
-				9AE2FDBE221F46680041AA0F /* Content.swift in Sources */,
+				9AE2FDBE221F46680041AA0F /* JSONFile.swift in Sources */,
 				9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
