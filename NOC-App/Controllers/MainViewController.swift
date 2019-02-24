@@ -11,7 +11,9 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Properites
-    private var servers = [Server]()
+    var servers = [Server]()
+    let cellId = "cellId"
+
     
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
@@ -28,7 +30,22 @@ class MainViewController: UIViewController {
     }
     
     // MARK: - Private Methods.
-    
+    func setStatusColor(for index: Int) -> UIColor {
+        let statusId = servers[index].getStatus()
+        switch statusId {
+        case 1:
+            return .green
+        case 2:
+            return .orange
+        case 3:
+            return .yellow
+        case 4:
+            return .red
+        default:
+            return .gray // For unknown values.
+        }
+    }
+
     // MARK: Networking.
     fileprivate func fetchJSON() {
         let urlString = "http://www.mocky.io/v2/5c5c46f13900005a18e05b90"
@@ -45,8 +62,8 @@ class MainViewController: UIViewController {
 
                 do {
                     let decoder = JSONDecoder()
-                    let parsedFile = try decoder.decode(JSONFile.self, from: data)
-                    self.servers = parsedFile.content
+                    let parsedJson = try decoder.decode(JSONFile.self, from: data)
+                    self.servers = parsedJson.getContent()
                     self.tableView.reloadData()
                 } catch let jsonError {
                     print("Failed after fetching, json error: \(jsonError)")
@@ -64,25 +81,14 @@ extension MainViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CustomTableViewCell else { return UITableViewCell() }
-        let idx = indexPath.row
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as? ServerTableViewCell else { return UITableViewCell() }
+        let index = indexPath.row
         cell.serverImageView.image = UIImage(named: "serverImage")
         cell.serverImageView.makeRoundedCorners() // Make the image has rounded corners.
-        cell.serverNameLabel.text = servers[idx].name
-        cell.serverIPAddress.text = servers[idx].ipAddress
-        cell.serverDeviceIPSubnetMask.text = servers[idx].ipSubnetMask
-        switch servers[idx].status?.id {
-        case 1:
-            cell.statusView.backgroundColor = .green
-        case 2:
-            cell.statusView.backgroundColor = .orange
-        case 3:
-            cell.statusView.backgroundColor = .yellow
-        case 4:
-            cell.statusView.backgroundColor = .red
-        default:
-            cell.statusView.backgroundColor = .gray // For unknown values.
-        }
+        cell.serverNameLabel.text = servers[index].getName()
+        cell.serverIPAddress.text = servers[index].getIpAddress()
+        cell.serverDeviceIPSubnetMask.text = servers[index].getIpSubnetMask()
+        cell.statusView.backgroundColor = setStatusColor(for: index)
         cell.statusView.makeRoundedCorners()
         
         // Make the cell not celectable.

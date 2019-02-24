@@ -9,18 +9,20 @@
 import Foundation
 
 struct JSONFile: Decodable {
-    let content: [Server]
-    let pageable: Pageable?
-    let totalPages: Int?
-    let totalElements: Int?
-    let first: Bool?
-    let last: Bool?
-    let sort: [String: Bool]?
-    let numberOfElements: Int?
-    let size: Int?
-    let number: Int?
-    let empty: Bool?
+    // MARK: Properites
+    private var content: [Server]
+    private let pageable: Pageable?
+    private let totalPages: Int?
+    private let totalElements: Int?
+    private let first: Bool?
+    private let last: Bool?
+    private let sort: [String: Bool]?
+    private let numberOfElements: Int?
+    private let size: Int?
+    private let number: Int?
+    private let empty: Bool?
     
+    // MARK: Init Method
     init(servers: [Server], pageable: Pageable?,
         totalPages: Int?, totalElements: Int?,
         first: Bool?, last: Bool?,
@@ -37,5 +39,10 @@ struct JSONFile: Decodable {
         self.size = size
         self.number = number
         self.empty = empty
+    }
+    
+    // MARK: Getters
+    func getContent() -> [Server] {
+        return self.content
     }
 }

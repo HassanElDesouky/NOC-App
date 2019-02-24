@@ -9,12 +9,12 @@
 import Foundation
 
 struct Pageable: Decodable {
-    let sort: [String: Bool]?
-    let pageSize: Int?
-    let pageNumber: Int?
-    let offset: Int?
-    let unpaged: Bool?
-    let paged: Bool?
+    private let sort: [String: Bool]?
+    private let pageSize: Int?
+    private let pageNumber: Int?
+    private let offset: Int?
+    private let unpaged: Bool?
+    private let paged: Bool?
     
     init(sort: [String: Bool]?, pageSize: Int?,
         pageNumber: Int?, offset: Int?,

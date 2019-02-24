@@ -9,9 +9,9 @@
 import Foundation
 
 struct ServerCommunicationProtocol: Decodable {
-    let id: Int?
-    let name: String?
-    let defaultPort: Int?
+    private let id: Int?
+    private let name: String?
+    private let defaultPort: Int?
     
     init(id: Int?, name: String?,
          defaultPort: Int?) {

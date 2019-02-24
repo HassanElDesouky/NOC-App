@@ -9,8 +9,8 @@
 import Foundation
 
 struct ServerType: Decodable {
-    let id: Int?
-    let name: String?
+   private let id: Int?
+   private let name: String?
     
     init(id: Int?, name: String?) {
         self.id = id

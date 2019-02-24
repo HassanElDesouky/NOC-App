@@ -9,10 +9,10 @@
 import Foundation
 
 struct ServerModel: Decodable {
-    let id: Int?
-    let name: String?
-    let creationDate: String?
-    let expiryDate: String?
+    private let id: Int?
+    private let name: String?
+    private let creationDate: String?
+    private let expiryDate: String?
     
     init(id: Int?, name: String?,
          creationDate: String?,
