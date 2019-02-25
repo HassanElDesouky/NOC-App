@@ -86,9 +86,9 @@
 			isa = PBXGroup;
 			children = (
 				9AE2FDBB221F266B0041AA0F /* Server.swift */,
+				9AE2FDC3221F49660041AA0F /* ServerStatus.swift */,
 				9AE2FDBD221F46680041AA0F /* JSONFile.swift */,
 				9AE2FDC1221F49580041AA0F /* ServerModel.swift */,
-				9AE2FDC3221F49660041AA0F /* ServerStatus.swift */,
 				9AE2FDC5221F49750041AA0F /* ServerType.swift */,
 				9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */,
 				9AE2FDBF221F47440041AA0F /* Pageable.swift */,

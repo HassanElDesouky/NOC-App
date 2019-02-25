@@ -6,7 +6,7 @@
 //  Copyright © 2019 Hassan El Desouky. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct ServerStatus: Decodable {
     // MARK: Properities
@@ -23,8 +23,22 @@ struct ServerStatus: Decodable {
         self.legacyValue = legacyValue
     }
     
-    //MARK: Getters
-    func getId() -> Int? {
-        return self.id
+    // MARK: Static Methods
+    static func setStatusColor(for index: Int, _ servers: [Server]) -> UIColor {
+        // Sets status color based on the status id.
+        let statusId = servers[index].getStatus()
+        switch statusId {
+        case 1:
+            return .green
+        case 2:
+            return .orange
+        case 3:
+            return .yellow
+        case 4:
+            return .red
+        default:
+            return .gray // For unknown values.
+        }
     }
+
 }
