@@ -19,6 +19,15 @@ class MainViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var filterAllButton: UIButton!
+    @IBOutlet weak var filterActiveButton: UIButton!
+    @IBOutlet weak var filterDownButton: UIButton!
+    @IBOutlet weak var filterAllLocationsSearchBar: UISearchBar!
+    @IBOutlet weak var alertCount: UILabel!
+    @IBOutlet weak var notificationButton: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var networkButton: UIButton!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
