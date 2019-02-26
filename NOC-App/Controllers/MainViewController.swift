@@ -31,7 +31,7 @@ class MainViewController: UIViewController {
         return true    // Hide status bar.
     }
     
-    // MARK: - Private Methods.
+    // MARK: - Private Methods
     // MARK: UI
     fileprivate func setupProfileButton() {
         let image = UIImage(named: "profile")
@@ -40,7 +40,7 @@ class MainViewController: UIViewController {
         profileButton.makeRoundedCorners()
     }
 
-    // MARK: Networking.
+    // MARK: Networking
     fileprivate func fetchJSON(page: Int) {
         let urlString = "http://www.mocky.io/v2/5c5c46f13900005a18e05b90?pageNumber=\(page)"
         guard let url = URL(string: urlString) else { return }
@@ -100,7 +100,6 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
 }
-
 
 // MARK: - TableView Delegate methods
 extension MainViewController: UITableViewDelegate {

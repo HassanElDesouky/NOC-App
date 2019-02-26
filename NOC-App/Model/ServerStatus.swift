@@ -10,9 +10,9 @@ import UIKit
 
 struct ServerStatus: Decodable {
     // MARK: Properities
-    private let id: Int?
-    private let statusValue: String?
-    private let legacyValue: String?
+    private var id: Int?
+    private var statusValue: String?
+    private var legacyValue: String?
     
     // MARK: Init Method
     init(id: Int?,
@@ -21,6 +21,10 @@ struct ServerStatus: Decodable {
         self.id = id
         self.statusValue = statusValue
         self.legacyValue = legacyValue
+    }
+    
+    init(id: Int?) {
+        self.id = id
     }
     
     //MARK: Getters

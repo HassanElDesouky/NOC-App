@@ -10,19 +10,19 @@ import UIKit
 
 struct Server: Decodable {
     // MARK: Properities
-    private let name: String?
-    private let ipAddress: String?
-    private let ipSubnetMask: String?
-    private let model: ServerModel?
-    private let locationId: Int?
-    private let status: ServerStatus?
-    private let type: ServerType?
-    private let serialNumber: String?
-    private let version: String?
-    private let communicationProtocols: [ServerCommunicationProtocol]?
-    private let targetMachines: [Server]?
-    private let location: Int?
-    private let serialNum: String?
+    private var name: String?
+    private var ipAddress: String?
+    private var ipSubnetMask: String?
+    private var model: ServerModel?
+    private var locationId: Int?
+    private var status: ServerStatus?
+    private var type: ServerType?
+    private var serialNumber: String?
+    private var version: String?
+    private var communicationProtocols: [ServerCommunicationProtocol]?
+    private var targetMachines: [Server]?
+    private var location: Int?
+    private var serialNum: String?
     
     // MARK: Init Method
     init(name: String?, ipAddress: String?,
@@ -46,6 +46,10 @@ struct Server: Decodable {
        self.targetMachines = targetMachines
        self.location = location
        self.serialNum = serialNum
+    }
+    
+    init(status: ServerStatus?) {
+        self.status = status
     }
     
     // MARK: Getters

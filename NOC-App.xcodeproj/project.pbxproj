@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A0BD7D8221F86BB0090AD0D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */; };
+		9A8C001222257E87003B1A89 /* ServerStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C001122257E87003B1A89 /* ServerStatusTests.swift */; };
 		9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF603221DA6FF0048E450 /* AppDelegate.swift */; };
 		9ADDF606221DA6FF0048E450 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF605221DA6FF0048E450 /* MainViewController.swift */; };
 		9ADDF609221DA6FF0048E450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADDF607221DA6FF0048E450 /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		9A8C001122257E87003B1A89 /* ServerStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStatusTests.swift; sourceTree = "<group>"; };
 		9ADDF600221DA6FF0048E450 /* NOC-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOC-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADDF603221DA6FF0048E450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ADDF605221DA6FF0048E450 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				9ADDF618221DA7020048E450 /* NOC_AppTests.swift */,
+				9A8C001122257E87003B1A89 /* ServerStatusTests.swift */,
 				9ADDF61A221DA7020048E450 /* Info.plist */,
 			);
 			path = "NOC-AppTests";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A8C001222257E87003B1A89 /* ServerStatusTests.swift in Sources */,
 				9ADDF619221DA7020048E450 /* NOC_AppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
