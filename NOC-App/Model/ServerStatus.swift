@@ -23,7 +23,12 @@ struct ServerStatus: Decodable {
         self.legacyValue = legacyValue
     }
     
-    // MARK: Static Methods
+    //MARK: Getters
+    func getId() -> Int? {
+        return self.id
+    }
+    
+    // MARK: Public Methods
     static func setStatusColor(for index: Int, _ servers: [Server]) -> UIColor {
         // Sets status color based on the status id.
         let statusId = servers[index].getStatus()

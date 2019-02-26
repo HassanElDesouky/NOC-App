@@ -8,19 +8,23 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDelegate {
+class MainViewController: UIViewController {
     
     // MARK: - Properites
     var servers = [Server]()
+    var pageNumber = 1
+    var isLoadingPage = false
     let cellId = "cellId"
-
+    
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var profileButton: UIButton!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchJSON() 
+        setupProfileButton()
+        fetchJSON(page: pageNumber)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -28,9 +32,18 @@ class MainViewController: UIViewController, UITableViewDelegate {
     }
     
     // MARK: - Private Methods.
+    // MARK: UI
+    fileprivate func setupProfileButton() {
+        let image = UIImage(named: "profile")
+        profileButton.imageView?.contentMode = .scaleAspectFill
+        profileButton.setImage(image, for: .normal)
+        profileButton.makeRoundedCorners()
+    }
+
     // MARK: Networking.
-    fileprivate func fetchJSON() {
-        let urlString = "http://www.mocky.io/v2/5c5c46f13900005a18e05b90"
+    fileprivate func fetchJSON(page: Int) {
+        let urlString = "http://www.mocky.io/v2/5c5c46f13900005a18e05b90?pageNumber=\(page)"
+        print(urlString)
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
@@ -50,6 +63,17 @@ class MainViewController: UIViewController, UITableViewDelegate {
                 }
             }
         }.resume()
+    }
+    
+    func getServersList(page: Int) {
+        isLoadingPage = true
+        fetchJSON(page: page)
+        tableView.reloadData()
+    }
+    
+    func loadMoreData() {
+        pageNumber += 1
+        getServersList(page: pageNumber)
     }
 }
 
@@ -75,5 +99,17 @@ extension MainViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         
         return cell
+    }
+}
+
+
+// MARK: - TableView Delegate methods
+extension MainViewController: UITableViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingPage){
+            print("scrollViewDidEndDragging")
+            self.isLoadingPage = true
+            self.loadMoreData()
+        }
     }
 }

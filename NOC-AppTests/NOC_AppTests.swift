@@ -20,7 +20,5 @@ class NOC_AppTests: XCTestCase {
     }
     
     func testSetStatusColor() {
-        let result = UIColor.green
-        XCTAssertEqual(result, UIColor.green)
     }
 }
