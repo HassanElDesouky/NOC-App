@@ -43,7 +43,6 @@ class MainViewController: UIViewController {
     // MARK: Networking.
     fileprivate func fetchJSON(page: Int) {
         let urlString = "http://www.mocky.io/v2/5c5c46f13900005a18e05b90?pageNumber=\(page)"
-        print(urlString)
         guard let url = URL(string: urlString) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             DispatchQueue.main.async {
@@ -107,7 +106,7 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if (((scrollView.contentOffset.y + scrollView.frame.size.height) > scrollView.contentSize.height ) && !isLoadingPage){
-            print("scrollViewDidEndDragging")
+            // Load more when reach end.
             self.isLoadingPage = true
             self.loadMoreData()
         }
