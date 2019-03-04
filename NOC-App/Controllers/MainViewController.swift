@@ -20,9 +20,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var filterAllButton: UIButton!
-    @IBOutlet weak var filterActiveButton: UIButton!
-    @IBOutlet weak var filterDownButton: UIButton!
+    @IBOutlet weak var filterAllButton: RadioButton!
+    @IBOutlet weak var filterActiveButton: RadioButton!
+    @IBOutlet weak var filterDownButton: RadioButton!
     @IBOutlet weak var filterAllLocationsSearchBar: UISearchBar!
     @IBOutlet weak var alertCount: UILabel!
     @IBOutlet weak var notificationButton: UIButton!
@@ -33,11 +33,20 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProfileButton()
+        setupFilterButtons()
         fetchJSON(page: pageNumber)
     }
     
     override var prefersStatusBarHidden: Bool {
         return true    // Hide status bar.
+    }
+    
+    override func awakeFromNib() {
+        self.view.layoutIfNeeded()
+        
+        filterActiveButton.isSelected = false
+        filterDownButton.isSelected = false
+        filterAllButton.isSelected = true
     }
     
     // MARK: - Private Methods
@@ -47,6 +56,12 @@ class MainViewController: UIViewController {
         profileButton.imageView?.contentMode = .scaleAspectFill
         profileButton.setImage(image, for: .normal)
         profileButton.makeRoundedCorners()
+    }
+    
+    fileprivate func setupFilterButtons() {
+        filterAllButton?.alternateButton = [filterDownButton!, filterActiveButton!]
+        filterDownButton?.alternateButton = [filterActiveButton!, filterAllButton!]
+        filterActiveButton?.alternateButton = [filterDownButton!, filterAllButton!]
     }
 
     // MARK: Networking

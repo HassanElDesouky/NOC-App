@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9A0BD7D8221F86BB0090AD0D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */; };
 		9A8C001222257E87003B1A89 /* ServerStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8C001122257E87003B1A89 /* ServerStatusTests.swift */; };
+		9AD45689222D3CC9009A5540 /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD45688222D3CC9009A5540 /* RadioButton.swift */; };
+		9AD4568B222D4319009A5540 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AD4568A222D4319009A5540 /* UIColor+Extension.swift */; };
 		9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF603221DA6FF0048E450 /* AppDelegate.swift */; };
 		9ADDF606221DA6FF0048E450 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ADDF605221DA6FF0048E450 /* MainViewController.swift */; };
 		9ADDF609221DA6FF0048E450 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9ADDF607221DA6FF0048E450 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		9A8C001122257E87003B1A89 /* ServerStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStatusTests.swift; sourceTree = "<group>"; };
+		9AD45688222D3CC9009A5540 /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		9AD4568A222D4319009A5540 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		9ADDF600221DA6FF0048E450 /* NOC-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOC-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ADDF603221DA6FF0048E450 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9ADDF605221DA6FF0048E450 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				9A0BD7D7221F86BB0090AD0D /* UIView+Extension.swift */,
+				9AD4568A222D4319009A5540 /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +128,14 @@
 			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
+		9AD45687222D3C6F009A5540 /* Custom UI */ = {
+			isa = PBXGroup;
+			children = (
+				9AD45688222D3CC9009A5540 /* RadioButton.swift */,
+			);
+			path = "Custom UI";
+			sourceTree = "<group>";
+		};
 		9ADDF5F7221DA6FF0048E450 = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +163,7 @@
 				9A4E74B6221F64A200980106 /* View */,
 				9A4E74B5221F649B00980106 /* Controllers */,
 				9A4E74B7221F661200980106 /* Custom Cells */,
+				9AD45687222D3C6F009A5540 /* Custom UI */,
 				9ADDF60A221DA7010048E450 /* Assets.xcassets */,
 				9ADDF60F221DA7010048E450 /* Info.plist */,
 			);
@@ -270,12 +284,14 @@
 				9AE2FDC4221F49660041AA0F /* ServerStatus.swift in Sources */,
 				9AE2FDC0221F47440041AA0F /* Pageable.swift in Sources */,
 				9AE2FDC6221F49750041AA0F /* ServerType.swift in Sources */,
+				9AD45689222D3CC9009A5540 /* RadioButton.swift in Sources */,
 				9AE2FDC8221F49AB0041AA0F /* ServerCommunicationProtocol.swift in Sources */,
 				9AE2FDC2221F49580041AA0F /* ServerModel.swift in Sources */,
 				9AE2FDBA221F23100041AA0F /* ServerTableViewCell.swift in Sources */,
 				9A0BD7D8221F86BB0090AD0D /* UIView+Extension.swift in Sources */,
 				9ADDF606221DA6FF0048E450 /* MainViewController.swift in Sources */,
 				9AE2FDBC221F266B0041AA0F /* Server.swift in Sources */,
+				9AD4568B222D4319009A5540 /* UIColor+Extension.swift in Sources */,
 				9AE2FDBE221F46680041AA0F /* JSONFile.swift in Sources */,
 				9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */,
 			);

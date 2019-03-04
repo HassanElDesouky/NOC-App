@@ -90,26 +90,29 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8w-kI-bey">
                                                 <rect key="frame" x="285" y="8" width="476" height="51"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-OB-zUU">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-OB-zUU">
                                                         <rect key="frame" x="81.5" y="10.5" width="191.5" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-yp-2Ga">
-                                                                <rect key="frame" x="0.0" y="0.0" width="48.5" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-yp-2Ga" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="58.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.28756541013717651" green="0.64617961645126343" blue="0.98435705900192261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="tintColor" red="0.28756541009999997" green="0.6461796165" blue="0.98435705900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="All">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ype-C3-wcG">
-                                                                <rect key="frame" x="71.5" y="0.0" width="48.5" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ype-C3-wcG" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
+                                                                <rect key="frame" x="66.5" y="0.0" width="58.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.28756541013717651" green="0.64617961645126343" blue="0.98435705900192261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="tintColor" red="0.28756541009999997" green="0.6461796165" blue="0.98435705900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Active">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-60-8bo">
-                                                                <rect key="frame" x="143" y="0.0" width="48.5" height="30"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-60-8bo" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
+                                                                <rect key="frame" x="133" y="0.0" width="58.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.28756541013717651" green="0.64617961645126343" blue="0.98435705900192261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                <color key="tintColor" red="0.28756541009999997" green="0.6461796165" blue="0.98435705900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Down">
                                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </state>

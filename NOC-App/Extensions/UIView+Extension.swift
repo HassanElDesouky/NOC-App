@@ -13,4 +13,9 @@ extension UIView {
         self.layer.cornerRadius = (self.frame.width / 2)
         self.layer.masksToBounds = true
     }
+    
+    func makeRoundedCorners(by value: Int) {
+        self.layer.cornerRadius = CGFloat(value)
+        self.layer.masksToBounds = true
+    }
 }
