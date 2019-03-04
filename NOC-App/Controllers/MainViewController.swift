@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     // MARK: - Properites
+    var filterationServers = [Server]()
     var servers = [Server]()
     var pageNumber = 1
     var isLoadingPage = false
@@ -79,7 +80,8 @@ class MainViewController: UIViewController {
                 do {
                     let decoder = JSONDecoder()
                     let parsedJson = try decoder.decode(JSONFile.self, from: data)
-                    self.servers = parsedJson.getContent()
+                    self.filterationServers = parsedJson.getContent()
+                    self.servers = self.filterationServers
                     self.tableView.reloadData()
                 } catch let jsonError {
                     print("Failed after fetching, json error: \(jsonError)")
@@ -98,12 +100,39 @@ class MainViewController: UIViewController {
         pageNumber += 1
         getServersList(page: pageNumber)
     }
+    
+    // MARK: - Actions
+    
+    @IBAction func showAllServers(_ sender: RadioButton) {
+        filterationServers = servers
+        tableView.reloadData()
+    }
+    
+    @IBAction func showActiveServers(_ sender: RadioButton) {
+        filterationServers = servers
+        let filteredServers = filterationServers.filter { (server) -> Bool in
+            let serverStatus = server.getStatus()
+            return serverStatus == 1
+        }
+        filterationServers = filteredServers
+        tableView.reloadData()
+    }
+    
+    @IBAction func showDownServers(_ sender: RadioButton) {
+        filterationServers = servers
+        let filteredServers = filterationServers.filter { (server) -> Bool in
+            let serverStatus = server.getStatus()
+            return serverStatus == 2 || serverStatus == 3 || serverStatus == 4
+        }
+        filterationServers = filteredServers
+        tableView.reloadData()
+    }
 }
 
 // MARK: - TableView DataSource methods
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return servers.count
+        return filterationServers.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -112,10 +141,10 @@ extension MainViewController: UITableViewDataSource {
         let index = indexPath.row
         cell.serverImageView.image = UIImage(named: "serverImage")
         cell.serverImageView.makeRoundedCorners() // Make the image has rounded corners.
-        cell.serverNameLabel.text = servers[index].getName()
-        cell.serverIPAddress.text = servers[index].getIpAddress()
-        cell.serverDeviceIPSubnetMask.text = servers[index].getIpSubnetMask()
-        cell.statusView.backgroundColor = ServerStatus.setStatusColor(for: index, servers)
+        cell.serverNameLabel.text = filterationServers[index].getName()
+        cell.serverIPAddress.text = filterationServers[index].getIpAddress()
+        cell.serverDeviceIPSubnetMask.text = filterationServers[index].getIpSubnetMask()
+        cell.statusView.backgroundColor = ServerStatus.setStatusColor(for: index, filterationServers)
         cell.statusView.makeRoundedCorners()
         
         // Make the cell not celectable.

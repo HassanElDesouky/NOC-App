@@ -93,29 +93,38 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ud-OB-zUU">
                                                         <rect key="frame" x="81.5" y="10.5" width="191.5" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-yp-2Ga" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dA9-yp-2Ga" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="58.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.28756541013717651" green="0.64617961645126343" blue="0.98435705900192261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="tintColor" red="0.28756541009999997" green="0.6461796165" blue="0.98435705900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="All">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showAllServers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lPn-p8-Kw5"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ype-C3-wcG" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ype-C3-wcG" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
                                                                 <rect key="frame" x="66.5" y="0.0" width="58.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.28756541013717651" green="0.64617961645126343" blue="0.98435705900192261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="tintColor" red="0.28756541009999997" green="0.6461796165" blue="0.98435705900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Active">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showActiveServers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HeA-ai-8Z5"/>
+                                                                </connections>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-60-8bo" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="655-60-8bo" customClass="RadioButton" customModule="NOC_App" customModuleProvider="target">
                                                                 <rect key="frame" x="133" y="0.0" width="58.5" height="30"/>
                                                                 <color key="backgroundColor" red="0.28756541013717651" green="0.64617961645126343" blue="0.98435705900192261" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="tintColor" red="0.28756541009999997" green="0.6461796165" blue="0.98435705900000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <state key="normal" title="Down">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" red="0.81960784313725488" green="0.83529411764705885" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="showDownServers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vuf-3I-yWf"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
