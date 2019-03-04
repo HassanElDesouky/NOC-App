@@ -67,6 +67,9 @@
                                                             <string>Title</string>
                                                             <string>Title</string>
                                                         </scopeButtonTitles>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Gyb-6L-R2Z"/>
+                                                        </connections>
                                                     </searchBar>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFt-Dv-xdc">
                                                         <rect key="frame" x="272" y="0.0" width="1" height="56"/>
@@ -140,6 +143,9 @@
                                                             <constraint firstAttribute="width" constant="187" id="M4z-Og-GdY"/>
                                                         </constraints>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="BYZ-38-t0r" id="5y7-aR-YfM"/>
+                                                        </connections>
                                                     </searchBar>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
