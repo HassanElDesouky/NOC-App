@@ -23,22 +23,27 @@ class ServerStatusTests: XCTestCase {
         // Green
         let serverStatusGreen = ServerStatus(id: 1)
         let serverOne = Server(status: serverStatusGreen)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverOne]) == .green, "SetStatusColor failed")
+        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverOne]) ==
+            UIColor.FlatColor.Green.MountainMeadow, "SetStatusColor failed")
         // Orange
         let serverStatusOrange = ServerStatus(id: 2)
         let serverTwo = Server(status: serverStatusOrange)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverTwo]) == .orange, "SetStatusColor failed")
+        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverTwo]) ==
+            UIColor.FlatColor.Orange.NeonCarrot, "SetStatusColor failed")
         // Yellow
         let serverStatusYellow = ServerStatus(id: 3)
         let serverThree = Server(status: serverStatusYellow)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverThree]) == .yellow, "SetStatusColor failed")
+        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverThree]) ==
+            UIColor.FlatColor.Yellow.Turbo, "SetStatusColor failed")
         // Red
         let serverStatusRed = ServerStatus(id: 4)
         let serverFour = Server(status: serverStatusRed)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverFour]) == .red, "SetStatusColor failed")
+        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverFour]) ==
+            UIColor.FlatColor.Red.WellRead, "SetStatusColor failed")
         // Gray
         let serverStatus = ServerStatus(id: 5)
         let server = Server(status: serverStatus)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [server]) == .gray, "SetStatusColor failed")
+        XCTAssert(ServerStatus.setStatusColor(for: 0, [server]) ==
+            UIColor.FlatColor.Gray.AlmondFrost, "SetStatusColor failed")
     }
 }

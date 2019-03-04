@@ -38,15 +38,15 @@ struct ServerStatus: Decodable {
         let statusId = servers[index].getStatus()
         switch statusId {
         case 1:
-            return .green
+            return UIColor.FlatColor.Green.MountainMeadow
         case 2:
-            return .orange
+            return UIColor.FlatColor.Orange.NeonCarrot
         case 3:
-            return .yellow
+            return UIColor.FlatColor.Yellow.Turbo
         case 4:
-            return .red
+            return UIColor.FlatColor.Red.WellRead
         default:
-            return .gray // For unknown values.
+            return UIColor.FlatColor.Gray.AlmondFrost // For unknown values.
         }
     }
 
