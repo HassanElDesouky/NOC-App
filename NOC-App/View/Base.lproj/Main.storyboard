@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWO-pd-dHj">
                                 <rect key="frame" x="0.0" y="0.0" width="85" height="834"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zmp-aC-7lI">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zmp-aC-7lI">
                                         <rect key="frame" x="17" y="8" width="51" height="51"/>
                                         <color key="backgroundColor" red="0.60821783542633057" green="0.44695240259170532" blue="0.84709858894348145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -396,6 +396,7 @@
                         <outlet property="filterAllButton" destination="dA9-yp-2Ga" id="Gdn-6V-2rX"/>
                         <outlet property="filterAllLocationsSearchBar" destination="50b-Ul-53j" id="vq5-7E-t1X"/>
                         <outlet property="filterDownButton" destination="655-60-8bo" id="gFa-qz-Jbv"/>
+                        <outlet property="logoImageView" destination="Zmp-aC-7lI" id="ZxL-7u-cvo"/>
                         <outlet property="menuButton" destination="MHl-os-44Q" id="53O-Rd-pE5"/>
                         <outlet property="networkButton" destination="C7r-Ah-bHm" id="M5L-OX-ZEu"/>
                         <outlet property="notificationButton" destination="OzX-yu-zPi" id="8RJ-Bq-hZR"/>

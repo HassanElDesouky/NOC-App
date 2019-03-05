@@ -30,14 +30,17 @@ class MainViewController: UIViewController {
     @IBOutlet weak private var notificationButton: UIButton!
     @IBOutlet weak private var menuButton: UIButton!
     @IBOutlet weak private var networkButton: UIButton!
+    @IBOutlet weak var logoImageView: UIImageView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         setupProfileButton()
         setupFilterButtons()
         setupLocationsSeachBar()
         setupUtilityButtons()
+        setupLogoImageView()
         fetchJSON(page: pageNumber)
     }
     
@@ -75,6 +78,11 @@ class MainViewController: UIViewController {
         notificationButton.imageView?.setImageColor(color: UIColor.FlatColor.Gray.IronGray)
         menuButton.imageView?.setImageColor(color: UIColor.FlatColor.Gray.IronGray)
         networkButton.imageView?.setImageColor(color: UIColor.FlatColor.Gray.IronGray)
+    }
+    
+    fileprivate func setupLogoImageView() {
+        logoImageView.image = UIImage(named: "logo")
+        logoImageView.makeRoundedCorners(by: 12)
     }
 
     // MARK: Networking
@@ -158,7 +166,6 @@ extension MainViewController: UITableViewDataSource {
         cell.configureCell(filteredServers, indexPath: indexPath)
         // Make the cell not celectable.
         cell.selectionStyle = .none
-        
         return cell
     }
 }
