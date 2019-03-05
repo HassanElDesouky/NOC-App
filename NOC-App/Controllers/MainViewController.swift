@@ -155,15 +155,7 @@ extension MainViewController: UITableViewDataSource {
             as? ServerTableViewCell else {
                 fatalError("Couldn't find ServerTableViewCell class")
         }
-        let index = indexPath.row
-        cell.serverImageView.image = UIImage(named: "serverImage")
-        cell.serverImageView.makeRoundedCorners() // Make the image has rounded corners.
-        cell.serverNameLabel.text = filteredServers[index].name
-        cell.serverIPAddress.text = filteredServers[index].ipAddress
-        cell.serverDeviceIPSubnetMask.text = filteredServers[index].ipSubnetMask?.rawValue
-        cell.statusView.backgroundColor = Status.setStatusColor(for: index, filteredServers)
-        cell.statusView.makeRoundedCorners()
-        
+        cell.configureCell(filteredServers, indexPath: indexPath)
         // Make the cell not celectable.
         cell.selectionStyle = .none
         
