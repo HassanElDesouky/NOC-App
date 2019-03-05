@@ -19,17 +19,17 @@ class MainViewController: UIViewController {
     let cellId = "cellId"
     
     // MARK: - Outlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var filterAllButton: RadioButton!
-    @IBOutlet weak var filterActiveButton: RadioButton!
-    @IBOutlet weak var filterDownButton: RadioButton!
-    @IBOutlet weak var filterAllLocationsSearchBar: UISearchBar!
-    @IBOutlet weak var alertCount: UILabel!
-    @IBOutlet weak var notificationButton: UIButton!
-    @IBOutlet weak var menuButton: UIButton!
-    @IBOutlet weak var networkButton: UIButton!
+    @IBOutlet weak private var tableView: UITableView!
+    @IBOutlet weak private var profileButton: UIButton!
+    @IBOutlet weak private var searchBar: UISearchBar!
+    @IBOutlet weak private var filterAllButton: RadioButton!
+    @IBOutlet weak private var filterActiveButton: RadioButton!
+    @IBOutlet weak private var filterDownButton: RadioButton!
+    @IBOutlet weak private var filterAllLocationsSearchBar: UISearchBar!
+    @IBOutlet weak private var alertCount: UILabel!
+    @IBOutlet weak private var notificationButton: UIButton!
+    @IBOutlet weak private var menuButton: UIButton!
+    @IBOutlet weak private var networkButton: UIButton!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -94,7 +94,7 @@ class MainViewController: UIViewController {
                     let parsedJson = try decoder.decode(JSONFile.self, from: data)
                     self.filteredServers = parsedJson.getContent()
                     self.servers = self.filteredServers
-                    self.tableView.reloadData()
+                    self.tableView.reloadData(with: .automatic)
                 } catch let jsonError {
                     print("Failed after fetching, json error: \(jsonError)")
                 }
@@ -102,45 +102,45 @@ class MainViewController: UIViewController {
         }.resume()
     }
     
-    func getServersList(page: Int) {
+    private func getServersList(page: Int) {
         isLoadingPage = true
         fetchJSON(page: page)
-        tableView.reloadData()
+        tableView.reloadData(with: .automatic)
     }
     
-    func loadMoreData() {
+    private func loadMoreData() {
         pageNumber += 1
         getServersList(page: pageNumber)
     }
     
-    func resetFilterButtons() {
+    private func resetFilterButtons() {
         filterActiveButton.isSelected = false
         filterDownButton.isSelected = false
         filterAllButton.isSelected = true
     }
     
     // MARK: - Actions
-    @IBAction func showAllServers(_ sender: RadioButton) {
+    @IBAction private func showAllServers(_ sender: RadioButton) {
         filteredServers = servers
-        tableView.reloadData()
+        tableView.reloadData(with: .automatic)
     }
     
-    @IBAction func showActiveServers(_ sender: RadioButton) {
+    @IBAction private func showActiveServers(_ sender: RadioButton) {
         filteredServers = servers
         filteredServers = filteredServers.filter { (server) -> Bool in
             let serverStatus = server.getStatus()
             return serverStatus == 1
         }
-        tableView.reloadData()
+        tableView.reloadData(with: .automatic)
     }
     
-    @IBAction func showDownServers(_ sender: RadioButton) {
+    @IBAction private func showDownServers(_ sender: RadioButton) {
         filteredServers = servers
         filteredServers = filteredServers.filter { (server) -> Bool in
             let serverStatus = server.getStatus()
             return serverStatus == 2 || serverStatus == 3 || serverStatus == 4
         }
-        tableView.reloadData()
+        tableView.reloadData(with: .automatic)
     }
 }
 
@@ -152,7 +152,9 @@ extension MainViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-            as? ServerTableViewCell else { return UITableViewCell() }
+            as? ServerTableViewCell else {
+                fatalError("Couldn't find ServerTableViewCell class")
+        }
         let index = indexPath.row
         cell.serverImageView.image = UIImage(named: "serverImage")
         cell.serverImageView.makeRoundedCorners() // Make the image has rounded corners.
@@ -186,14 +188,14 @@ extension MainViewController: UISearchBarDelegate {
         guard !searchText.isEmpty else {
             filteredServers = servers
             self.resetFilterButtons()
-            tableView.reloadData()
+            tableView.reloadData(with: .automatic)
             return
         }
         if searchBar == self.searchBar {
             filteredServers = filteredServers.filter({ (server) -> Bool in
                 server.getName()?.lowercased().contains(searchText.lowercased()) ?? false
             })
-            tableView.reloadData()
+            tableView.reloadData(with: .automatic)
         } else if searchBar == self.filterAllLocationsSearchBar {
             //
         }

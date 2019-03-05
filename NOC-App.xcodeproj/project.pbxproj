@@ -27,6 +27,7 @@
 		9AE2FDC4221F49660041AA0F /* ServerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC3221F49660041AA0F /* ServerStatus.swift */; };
 		9AE2FDC6221F49750041AA0F /* ServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC5221F49750041AA0F /* ServerType.swift */; };
 		9AE2FDC8221F49AB0041AA0F /* ServerCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */; };
+		9AE88560222F24EA00CBB520 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8855F222F24EA00CBB520 /* UITableView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		9AE2FDC3221F49660041AA0F /* ServerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStatus.swift; sourceTree = "<group>"; };
 		9AE2FDC5221F49750041AA0F /* ServerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerType.swift; sourceTree = "<group>"; };
 		9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunicationProtocol.swift; sourceTree = "<group>"; };
+		9AE8855F222F24EA00CBB520 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				9AD4568A222D4319009A5540 /* UIColor+Extension.swift */,
 				9AD4568E222D7208009A5540 /* UIImage+Extension.swift */,
 				9AD45690222D73E5009A5540 /* UIImageView+Extension.swift */,
+				9AE8855F222F24EA00CBB520 /* UITableView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				9AD4568B222D4319009A5540 /* UIColor+Extension.swift in Sources */,
 				9AE2FDBE221F46680041AA0F /* JSONFile.swift in Sources */,
 				9ADDF604221DA6FF0048E450 /* AppDelegate.swift in Sources */,
+				9AE88560222F24EA00CBB520 /* UITableView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
