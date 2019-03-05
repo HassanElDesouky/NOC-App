@@ -8,64 +8,103 @@
 
 import UIKit
 
-struct Server: Decodable {
-    // MARK: Properities
-    private var name: String?
-    private var ipAddress: String?
-    private var ipSubnetMask: String?
-    private var model: ServerModel?
-    private var locationId: Int?
-    private var status: ServerStatus?
-    private var type: ServerType?
-    private var serialNumber: String?
-    private var version: String?
-    private var communicationProtocols: [ServerCommunicationProtocol]?
-    private var targetMachines: [Server]?
-    private var location: Int?
-    private var serialNum: String?
+// Obtained from https://app.quicktype.io?share=hnLOJFp31FIRC5oWe5gW
+struct Server: Codable {
+    let id: Int?
+    let name: String?
+    let ipAddress: String?
+    let ipSubnetMask: IPSubnetMask?
+    let model: Model?
+    let locationID: Int?
+    let status: Status?
+    let type: TypeClass?
+    let serialNumber, version: String?
+    let communicationProtocols: [CommunicationProtocol]?
+    let targetMachines: [TargetMachine]?
+    let location: Int?
+    let serialNum: String?
     
-    // MARK: Init Method
-    init(name: String?, ipAddress: String?,
-         ipSubnetMask: String?, model: ServerModel?,
-         locationId: Int?, status: ServerStatus?,
-         type: ServerType?, serialNumber: String?,
-         version: String?, communicationProtocols: [ServerCommunicationProtocol]?,
-         targetMachines: [Server]?, location: Int?,
-         serialNum: String?) {
-        
-       self.name = name
-       self.ipAddress = ipAddress
-       self.ipSubnetMask = ipSubnetMask
-       self.model = model
-       self.locationId = locationId
-       self.status = status
-       self.type = type
-       self.serialNumber = serialNumber
-       self.version = version
-       self.communicationProtocols = communicationProtocols
-       self.targetMachines = targetMachines
-       self.location = location
-       self.serialNum = serialNum
+    enum CodingKeys: String, CodingKey {
+        case id, name, ipAddress, ipSubnetMask, model
+        case locationID = "locationId"
+        case status, type, serialNumber, version, communicationProtocols, targetMachines, location, serialNum
     }
     
-    init(status: ServerStatus?) {
+    init(status: Status) {
         self.status = status
+        self.id = nil
+        self.name = nil
+        self.ipAddress = nil
+        self.ipSubnetMask = nil
+        self.model = nil
+        self.locationID = nil
+        self.type = nil
+        self.serialNumber = nil
+        self.version = nil
+        self.communicationProtocols = nil
+        self.targetMachines = nil
+        self.location = nil
+        self.serialNum = nil
     }
+}
+
+struct CommunicationProtocol: Codable {
+    let id: Int?
+    let name: Name?
+    let defaultPort: Int?
+}
+
+enum Name: String, Codable {
+    case ssh = "SSH"
+    case telnet = "TELNET"
+}
+
+enum IPSubnetMask: String, Codable {
+    case the2552552550 = "255.255.255.0"
+}
+
+struct Model: Codable {
+    let id: Int?
+    let name: String?
+    let creationDate, expiryDate: JSONNull?
+}
+
+struct Status: Codable {
+    let id: Int?
+    let statusValue, legacyValue: String?
     
-    // MARK: Getters
-    func getName() -> String? {
-        return self.name
+    static func setStatusColor(for index: Int, _ servers: [Server]) -> UIColor {
+        // Sets status color based on the status id.
+        let statusId = servers[index].status?.id
+        switch statusId {
+        case 1:
+            return UIColor.FlatColor.Green.MountainMeadow
+        case 2:
+            return UIColor.FlatColor.Orange.NeonCarrot
+        case 3:
+            return UIColor.FlatColor.Yellow.Turbo
+        case 4:
+            return UIColor.FlatColor.Red.WellRead
+        default:
+            return UIColor.FlatColor.Gray.AlmondFrost // For unknown values.
+        }
     }
+}
+
+struct TypeClass: Codable {
+    let id: Int?
+    let name: String?
+}
+
+struct TargetMachine: Codable {
+    let id, sourceMachineID: Int?
+    let targetMachine: Server?
+    let circuitStatusID: Int?
     
-    func getIpAddress() -> String? {
-        return self.ipAddress
-    }
-    
-    func getIpSubnetMask() -> String? {
-        return self.ipSubnetMask
-    }
-    
-    func getStatus() -> Int? {
-        return self.status?.getId()
+    enum CodingKeys: String, CodingKey {
+        case id
+        case sourceMachineID = "sourceMachineId"
+        case targetMachine
+        case circuitStatusID = "circuitStatusId"
     }
 }

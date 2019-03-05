@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
                 do {
                     let decoder = JSONDecoder()
                     let parsedJson = try decoder.decode(JSONFile.self, from: data)
-                    self.filteredServers = parsedJson.getContent()
+                    self.filteredServers = parsedJson.content
                     self.servers = self.filteredServers
                     self.tableView.reloadData(with: .automatic)
                 } catch let jsonError {
@@ -128,7 +128,7 @@ class MainViewController: UIViewController {
     @IBAction private func showActiveServers(_ sender: RadioButton) {
         filteredServers = servers
         filteredServers = filteredServers.filter { (server) -> Bool in
-            let serverStatus = server.getStatus()
+            let serverStatus = server.status?.id
             return serverStatus == 1
         }
         tableView.reloadData(with: .automatic)
@@ -137,7 +137,7 @@ class MainViewController: UIViewController {
     @IBAction private func showDownServers(_ sender: RadioButton) {
         filteredServers = servers
         filteredServers = filteredServers.filter { (server) -> Bool in
-            let serverStatus = server.getStatus()
+            let serverStatus = server.status?.id
             return serverStatus == 2 || serverStatus == 3 || serverStatus == 4
         }
         tableView.reloadData(with: .automatic)
@@ -158,10 +158,10 @@ extension MainViewController: UITableViewDataSource {
         let index = indexPath.row
         cell.serverImageView.image = UIImage(named: "serverImage")
         cell.serverImageView.makeRoundedCorners() // Make the image has rounded corners.
-        cell.serverNameLabel.text = filteredServers[index].getName()
-        cell.serverIPAddress.text = filteredServers[index].getIpAddress()
-        cell.serverDeviceIPSubnetMask.text = filteredServers[index].getIpSubnetMask()
-        cell.statusView.backgroundColor = ServerStatus.setStatusColor(for: index, filteredServers)
+        cell.serverNameLabel.text = filteredServers[index].name
+        cell.serverIPAddress.text = filteredServers[index].ipAddress
+        cell.serverDeviceIPSubnetMask.text = filteredServers[index].ipSubnetMask?.rawValue
+        cell.statusView.backgroundColor = Status.setStatusColor(for: index, filteredServers)
         cell.statusView.makeRoundedCorners()
         
         // Make the cell not celectable.
@@ -193,7 +193,7 @@ extension MainViewController: UISearchBarDelegate {
         }
         if searchBar == self.searchBar {
             filteredServers = filteredServers.filter({ (server) -> Bool in
-                server.getName()?.lowercased().contains(searchText.lowercased()) ?? false
+                server.name?.lowercased().contains(searchText.lowercased()) ?? false
             })
             tableView.reloadData(with: .automatic)
         } else if searchBar == self.filterAllLocationsSearchBar {

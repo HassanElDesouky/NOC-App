@@ -1,5 +1,5 @@
 //
-//  Content.swift
+//  JSONFile.swift
 //  NOC-App
 //
 //  Created by Hassan El Desouky on 2/21/19.
@@ -8,41 +8,22 @@
 
 import Foundation
 
-struct JSONFile: Decodable {
-    // MARK: Properites
-    private var content: [Server]
-    private let pageable: Pageable?
-    private let totalPages: Int?
-    private let totalElements: Int?
-    private let first: Bool?
-    private let last: Bool?
-    private let sort: [String: Bool]?
-    private let numberOfElements: Int?
-    private let size: Int?
-    private let number: Int?
-    private let empty: Bool?
-    
-    // MARK: Init Method
-    init(servers: [Server], pageable: Pageable?,
-        totalPages: Int?, totalElements: Int?,
-        first: Bool?, last: Bool?,
-        sort: [String: Bool]?, numberOfElements: Int?,
-        size: Int?, number: Int?, empty: Bool?) {
-        self.content = servers
-        self.pageable = pageable
-        self.totalPages = totalPages
-        self.totalElements = totalElements
-        self.first = first
-        self.last = last
-        self.sort = sort
-        self.numberOfElements = numberOfElements
-        self.size = size
-        self.number = number
-        self.empty = empty
-    }
-    
-    // MARK: Getters
-    func getContent() -> [Server] {
-        return self.content
-    }
+struct JSONFile: Codable {
+    let content: [Server]
+    let pageable: Pageable
+    let totalPages, totalElements: Int
+    let last, first: Bool
+    let sort: Sort
+    let numberOfElements, size, number: Int
+    let empty: Bool
+}
+
+struct Pageable: Codable {
+    let sort: Sort?
+    let pageSize, pageNumber, offset: Int?
+    let unpaged, paged: Bool?
+}
+
+struct Sort: Codable {
+    let sorted, unsorted, empty: Bool?
 }

@@ -21,29 +21,29 @@ class ServerStatusTests: XCTestCase {
     
     func testSetStatusColor() {
         // Green
-        let serverStatusGreen = ServerStatus(id: 1)
+        let serverStatusGreen = Status(id: 1, statusValue: nil, legacyValue: nil)
         let serverOne = Server(status: serverStatusGreen)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverOne]) ==
+        XCTAssert(Status.setStatusColor(for: 0, [serverOne]) ==
             UIColor.FlatColor.Green.MountainMeadow, "SetStatusColor failed")
         // Orange
-        let serverStatusOrange = ServerStatus(id: 2)
+        let serverStatusOrange = Status(id: 2, statusValue: nil, legacyValue: nil)
         let serverTwo = Server(status: serverStatusOrange)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverTwo]) ==
+        XCTAssert(Status.setStatusColor(for: 0, [serverTwo]) ==
             UIColor.FlatColor.Orange.NeonCarrot, "SetStatusColor failed")
         // Yellow
-        let serverStatusYellow = ServerStatus(id: 3)
+        let serverStatusYellow = Status(id: 3, statusValue: nil, legacyValue: nil)
         let serverThree = Server(status: serverStatusYellow)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverThree]) ==
+        XCTAssert(Status.setStatusColor(for: 0, [serverThree]) ==
             UIColor.FlatColor.Yellow.Turbo, "SetStatusColor failed")
         // Red
-        let serverStatusRed = ServerStatus(id: 4)
+        let serverStatusRed = Status(id: 4, statusValue: nil, legacyValue: nil)
         let serverFour = Server(status: serverStatusRed)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [serverFour]) ==
+        XCTAssert(Status.setStatusColor(for: 0, [serverFour]) ==
             UIColor.FlatColor.Red.WellRead, "SetStatusColor failed")
         // Gray
-        let serverStatus = ServerStatus(id: 5)
+        let serverStatus = Status(id: 5, statusValue: nil, legacyValue: nil)
         let server = Server(status: serverStatus)
-        XCTAssert(ServerStatus.setStatusColor(for: 0, [server]) ==
+        XCTAssert(Status.setStatusColor(for: 0, [server]) ==
             UIColor.FlatColor.Gray.AlmondFrost, "SetStatusColor failed")
     }
 }

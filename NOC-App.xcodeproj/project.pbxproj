@@ -22,12 +22,8 @@
 		9AE2FDBA221F23100041AA0F /* ServerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDB9221F23100041AA0F /* ServerTableViewCell.swift */; };
 		9AE2FDBC221F266B0041AA0F /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBB221F266B0041AA0F /* Server.swift */; };
 		9AE2FDBE221F46680041AA0F /* JSONFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBD221F46680041AA0F /* JSONFile.swift */; };
-		9AE2FDC0221F47440041AA0F /* Pageable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDBF221F47440041AA0F /* Pageable.swift */; };
-		9AE2FDC2221F49580041AA0F /* ServerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC1221F49580041AA0F /* ServerModel.swift */; };
-		9AE2FDC4221F49660041AA0F /* ServerStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC3221F49660041AA0F /* ServerStatus.swift */; };
-		9AE2FDC6221F49750041AA0F /* ServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC5221F49750041AA0F /* ServerType.swift */; };
-		9AE2FDC8221F49AB0041AA0F /* ServerCommunicationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */; };
 		9AE88560222F24EA00CBB520 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE8855F222F24EA00CBB520 /* UITableView+Extension.swift */; };
+		9AE88562222F2FAD00CBB520 /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE88561222F2FAD00CBB520 /* JSONNull.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,12 +56,8 @@
 		9AE2FDB9221F23100041AA0F /* ServerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerTableViewCell.swift; sourceTree = "<group>"; };
 		9AE2FDBB221F266B0041AA0F /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		9AE2FDBD221F46680041AA0F /* JSONFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFile.swift; sourceTree = "<group>"; };
-		9AE2FDBF221F47440041AA0F /* Pageable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pageable.swift; sourceTree = "<group>"; };
-		9AE2FDC1221F49580041AA0F /* ServerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerModel.swift; sourceTree = "<group>"; };
-		9AE2FDC3221F49660041AA0F /* ServerStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerStatus.swift; sourceTree = "<group>"; };
-		9AE2FDC5221F49750041AA0F /* ServerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerType.swift; sourceTree = "<group>"; };
-		9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerCommunicationProtocol.swift; sourceTree = "<group>"; };
 		9AE8855F222F24EA00CBB520 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		9AE88561222F2FAD00CBB520 /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,13 +93,9 @@
 		9A4E74B4221F647D00980106 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9AE88561222F2FAD00CBB520 /* JSONNull.swift */,
 				9AE2FDBB221F266B0041AA0F /* Server.swift */,
-				9AE2FDC3221F49660041AA0F /* ServerStatus.swift */,
 				9AE2FDBD221F46680041AA0F /* JSONFile.swift */,
-				9AE2FDC1221F49580041AA0F /* ServerModel.swift */,
-				9AE2FDC5221F49750041AA0F /* ServerType.swift */,
-				9AE2FDC7221F49AB0041AA0F /* ServerCommunicationProtocol.swift */,
-				9AE2FDBF221F47440041AA0F /* Pageable.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -290,14 +278,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AE88562222F2FAD00CBB520 /* JSONNull.swift in Sources */,
 				9AD45691222D73E5009A5540 /* UIImageView+Extension.swift in Sources */,
-				9AE2FDC4221F49660041AA0F /* ServerStatus.swift in Sources */,
 				9AD4568F222D7208009A5540 /* UIImage+Extension.swift in Sources */,
-				9AE2FDC0221F47440041AA0F /* Pageable.swift in Sources */,
-				9AE2FDC6221F49750041AA0F /* ServerType.swift in Sources */,
 				9AD45689222D3CC9009A5540 /* RadioButton.swift in Sources */,
-				9AE2FDC8221F49AB0041AA0F /* ServerCommunicationProtocol.swift in Sources */,
-				9AE2FDC2221F49580041AA0F /* ServerModel.swift in Sources */,
 				9AE2FDBA221F23100041AA0F /* ServerTableViewCell.swift in Sources */,
 				9A0BD7D8221F86BB0090AD0D /* UIView+Extension.swift in Sources */,
 				9ADDF606221DA6FF0048E450 /* MainViewController.swift in Sources */,
